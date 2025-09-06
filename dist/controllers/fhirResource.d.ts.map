@@ -1,0 +1,1 @@
+{"version":3,"file":"fhirResource.d.ts","sourceRoot":"","sources":["../../controllers/fhirResource.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,OAAO,EAAE,QAAQ,EAAE,MAAM,SAAS,CAAC;AAM5C,eAAO,MAAM,eAAe,GAC1B,KAAK,OAAO,EACZ,KAAK,QAAQ,KACZ,OAAO,CAAC,IAAI,CAqEd,CAAC"}
