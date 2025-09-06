@@ -35,10 +35,7 @@ cp .env.example .env
 4. Update the `.env` file with your configuration:
 ```env
 # EMR/HL7 to FHIR conversion endpoint
-EMR_ENDPOINT=http://localhost:3010/convert/hl7-to-fhir
-
-# FHIR server configuration
-FHIR_BASE_URL=http://localhost:3010/fhir
+EMR_ENDPOINT=http://localhost:3010
 
 # Server configuration
 PORT=3000
@@ -50,8 +47,16 @@ PORT=3000
 ```bash
 npm run dev
 ```
-
 The server will start on `http://localhost:3000` by default.
+
+## Testing
+
+### Running Tests
+
+```bash
+# Run all tests
+npm test
+```
 
 ## API Endpoints
 

@@ -7,7 +7,7 @@ import {
 } from '../dtos/hl7.dto';
 
 const EMR_ENDPOINT =
-  process.env.EMR_ENDPOINT || 'http://localhost:3010/convert/hl7-to-fhir';
+  process.env.EMR_ENDPOINT || 'http://localhost:3010';
 
 export const convertHl7ToFhir = async (
   req: Request,
@@ -46,7 +46,7 @@ export const convertHl7ToFhir = async (
     };
 
     // Make request to the EMR service
-    const response = await axios.post(EMR_ENDPOINT, conversionPayload, {
+    const response = await axios.post(`${EMR_ENDPOINT}/convert/hl7-to-fhir`, conversionPayload, {
       headers: {
         'Content-Type': 'application/json',
         Authorization: authHeader,

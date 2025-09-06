@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 import axios from 'axios';
 import { ErrorResponse } from '../dtos/hl7.dto';
 
-const FHIR_BASE_URL = process.env.FHIR_BASE_URL || 'http://localhost:3010/fhir';
+const EMR_ENDPOINT = process.env.EMR_ENDPOINT || 'http://localhost:3010';
 
 export const getFhirResource = async (
   req: Request,
@@ -24,7 +24,7 @@ export const getFhirResource = async (
     const { version, resourceType, id } = req.params;
     const queryParams = req.query;
 
-    let fhirUrl = `${FHIR_BASE_URL}/${version}/${resourceType}`;
+    let fhirUrl = `${EMR_ENDPOINT}/fhir/${version}/${resourceType}`;
     if (id) {
       fhirUrl += `/${id}`;
     }

@@ -5,7 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.healthCheck = exports.convertHl7ToFhir = void 0;
 const axios_1 = __importDefault(require("axios"));
-const EMR_ENDPOINT = process.env.EMR_ENDPOINT || 'http://localhost:3010/convert/hl7-to-fhir';
+const EMR_ENDPOINT = process.env.EMR_ENDPOINT || 'http://localhost:3010';
 const convertHl7ToFhir = async (req, res) => {
     try {
         if (!req.body || !req.body.message) {

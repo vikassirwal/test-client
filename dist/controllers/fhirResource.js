@@ -5,7 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getFhirResource = void 0;
 const axios_1 = __importDefault(require("axios"));
-const FHIR_BASE_URL = process.env.FHIR_BASE_URL || 'http://localhost:3010/fhir';
+const EMR_ENDPOINT = process.env.EMR_ENDPOINT || 'http://localhost:3010';
 const getFhirResource = async (req, res) => {
     try {
         const authHeader = req.headers.authorization;
@@ -20,7 +20,7 @@ const getFhirResource = async (req, res) => {
         }
         const { version, resourceType, id } = req.params;
         const queryParams = req.query;
-        let fhirUrl = `${FHIR_BASE_URL}/${version}/${resourceType}`;
+        let fhirUrl = `${EMR_ENDPOINT}/fhir/${version}/${resourceType}`;
         if (id) {
             fhirUrl += `/${id}`;
         }
